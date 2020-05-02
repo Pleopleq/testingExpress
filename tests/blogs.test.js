@@ -84,5 +84,10 @@ describe('total likes', () => {
         const result = listHelper.totalLikes(emptyList)
         expect(result).toBe(0)
     })
-    
+
+    test('return blog with most likes from a list of blogs', () =>{
+        const result = listHelper.favoriteBlog(blogs)
+        expect(result).toEqual(blogs[0])
+    })
+
   })

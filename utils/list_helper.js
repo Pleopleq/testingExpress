@@ -4,11 +4,12 @@ const dummy = (blogs) => {
 }
 
 const totalLikes = (blogs) => {
-    return blogs.reduce((total, {likes}) => total + likes, 0 );
+    return blogs.reduce((total, {likes}) => total + likes, 0 )
 }
 
 const favoriteBlog = (blogs) => {
-   return  blogs.sort( (a,b) => b.likes - a.likes)
+   const result = blogs.sort( (a,b) => b.likes - a.likes)
+   return  result[0]
 }
 
 
