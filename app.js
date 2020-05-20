@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 require('express-async-errors')
 const cors = require('cors')
+const usersRouter = require('./controllers/users')
 const blogsRouter = require('./controllers/blogs')
 const logger = require('./utils/logger')
 const mongoose = require('mongoose')
@@ -11,6 +12,7 @@ app.use(express.static('build'))
 app.use(express.json())
 
 app.use( blogsRouter )
+app.use( usersRouter )
 
 logger.info('connecting to ', config.MONGODB_URI)
 
