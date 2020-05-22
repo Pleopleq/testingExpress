@@ -12,9 +12,10 @@ app.use(cors())
 app.use(express.static('build'))
 app.use(express.json())
 
-app.use( loginRouter )
 app.use( blogsRouter )
+app.use( loginRouter )
 app.use( usersRouter )
+
 
 logger.info('connecting to ', config.MONGODB_URI)
 
